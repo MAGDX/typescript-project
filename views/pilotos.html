@@ -1,0 +1,29 @@
+<input type="text" ng-model="vm.nameFilter" placeholder="Buscar..." />
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th colspan="4" class="text-center">Drivers Championship Standings 2017</th>
+        </tr>
+        <tr>
+            <th>Pos.</th>
+            <th>Nombre</th>
+            <th>Equipo</th>
+            <th>Puntos</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr ng-repeat="driver in vm.driversList | filter: vm.nameFilter">
+
+            <td>{{$index + 1}}</td>
+            <td>
+                <img ng-src="img/flags/{{driver.Driver.nationality}}.png" />
+                <a href="#!/app/piloto/{{driver.Driver.driverId}}/detalle">
+                    {{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}
+                </a>
+            </td>
+            <td>{{driver.Constructors[0].name}}</td>
+            <td>{{driver.points}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,16 @@
+<div class="card" style="width: 16rem;">
+    <img class="card-img-top" src="img/drivers/{{vm.driver.Driver.driverId}}.png" alt="Foto">
+    <div class="card-body">
+        <h5 class="card-title"><img ng-show="vm.driver" src="img/flags/{{vm.driver.Driver.nationality}}.png" />&nbsp;{{vm.driver.Driver.givenName}} {{vm.driver.Driver.familyName}}</h5>
+        <p class="card-text">
+
+            <div class="driver-status">
+                Country: {{vm.driver.Driver.nationality}}
+                <br /> Team: {{vm.driver.Constructors[0].name}}
+                <br /> Birth: {{vm.driver.Driver.dateOfBirth}}
+                <br />
+                <a href="{{vm.driver.Driver.url}}" target="_blank">Biografia</a>
+            </div>
+        </p>
+    </div>
+</div>
